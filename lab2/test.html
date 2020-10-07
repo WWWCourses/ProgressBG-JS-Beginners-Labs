@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>test</title>
+	<style>
+		[type="number"]{
+			border: 5px solid red;
+		}
+	</style>
+</head>
+<body>
+	<label>Price without VAT (DDS):  <input type="number"> </label>
+	<button id="btnOk">Calc</button>
+
+
+	<script>
+		let input = document.querySelector('[type="number"]');
+		let btnOk = document.querySelector('#btnOk');
+
+		btnOk.addEventListener('click', function (event) {
+			// TASK: log in console the price WITH VAT
+				let priceWOVat = input.value;
+				console.log( priceWOVat * 1.2 );
+			// END
+		})
+
+
+	</script>
+</body>
+</html>
