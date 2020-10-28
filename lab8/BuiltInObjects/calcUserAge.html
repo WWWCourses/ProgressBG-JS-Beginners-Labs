@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>calc age</title>
+</head>
+<body>
+	<label>Enter your birthdate: <input type="date" name=""></label>
+	<button onclick="calcUserAge()">Calculate my age</button>
+
+	<script>
+		function getUserBirthYear() {
+			// get the value of input with type="date":
+			var userBirthDateStr = document.querySelector('input[type="date"]').value;
+			console.log( userBirthDateStr );
+			// console.log(`DEBUG: userBirthDateStr = ${userBirthDateStr}`);
+
+			var userBirthDateObj = new Date(userBirthDateStr);
+
+			var userBirthYear = userBirthDateObj.getFullYear();
+
+			// console.log(`DEBUG: userBirthYear = ${userBirthYear}`);
+			return userBirthYear;
+		}
+
+		function getCurrentYear() {
+			return (new Date()).getFullYear();
+		}
+
+		function calcUserAge() {
+			var userAge = getCurrentYear() - getUserBirthYear();
+			console.log(`user age = ${userAge}`);
+		}
+
+	</script>
+</body>
+</html>
