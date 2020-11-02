@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>test </title>
+	<style>
+		body{
+			background-color:#CCC;
+		}
+		#a1{
+			border: 2px solid red;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="test">Welcome to <em>my site</em></h1>
+	<article>
+		<h2>Chapter 1</h2>
+	</article>
+	<article id="a1">
+		<h2 class="test">Chapter 2</h2>
+		<!-- <img id="test" src="https://picsum.photos/200/300" alt="lorem picture"> -->
+	</article>
+
+	<script>
+		const a1 = document.querySelector("#a1");
+		// create Object
+		const img = document.createElement("img");
+		img.src = "https://picsum.photos/200/300";
+
+		// attach in DOM:
+		a1.appendChild(img);
+
+
+
+
+
+	</script>
+</body>
+</html>
