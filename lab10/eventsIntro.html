@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>eventsIntro </title>
+	<style>
+		.output{
+			height: 2em;
+			border: 1px solid #999;
+		}
+	</style>
+</head>
+<body>
+	<!-- <button id="btnClick" onclick="writeInOutput();">Click me</button> -->
+	<button id="btnClick">Click me</button>
+	<div class="output"></div>
+
+	<script>
+		let counter = 0;
+		// DOM cache:
+		let output = document.querySelector('.output');
+
+		function clickHandler() {
+			console.log(`Clicked ${counter+=1}`);
+			output.innerHTML = "Hello";
+
+			output.addEventListener("click", function () {
+				output.innerHTML = "@@@@@@@@@@@@@@@@@@@@";
+			});
+		}
+
+
+		btnClick.addEventListener('click', clickHandler);
+
+
+
+
+
+	</script>
+
+</body>
+</html>

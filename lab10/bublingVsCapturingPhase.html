@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>bublingVsCapturingPhase </title>
+	<style>
+		.box{
+			font-size: 2em;
+			border:1px solid #999;
+		}
+		.red{
+			width: 5em;
+			height: 5em;
+			background-color: red;
+		}
+		.blue{
+			width: 50%;
+			height: 50%;
+			margin:25%;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="box red">
+		<div class="box blue"></div>
+	</div>
+
+
+	<script>
+		function clickBlueHandler() {
+			console.log(`Blue Clicked`);
+		}
+		function clickRedHandler() {
+			console.log(`Red Clicked`);
+		}
+		// DOM cache:
+		let redBox = document.querySelector('.red');
+		let blueBox = document.querySelector('.blue');
+
+		// atach events
+		// change next flag, to see the diff between "Bubbling" and "Capturing" phase
+		let useCapture = true;
+		blueBox.addEventListener('click', clickBlueHandler, useCapture );
+		redBox.addEventListener('click', clickRedHandler, useCapture);
+
+	</script>
+</body>
+</html>

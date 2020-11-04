@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>eventObjectDemo</title>
+
+	<style>
+		ul{
+			border: 1px solid red;
+		}
+		li{
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="test">
+	<div class="output"></div>
+
+
+	<script>
+		// TASK: on enter click = > write input.value in output.innerHTML
+		// DOM cache:
+		const input = document.querySelector('#test');
+		const output = document.querySelector('.output');
+
+		input.addEventListener('keypress', function (event) {
+			// console.dir(event);
+			if( event.keyCode === 13 ){
+				output.innerHTML = input.value;
+			}
+		})
+	</script>
+</body>
+</html>

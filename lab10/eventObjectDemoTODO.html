@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>eventObjectDemo</title>
+
+	<style>
+		ul{
+			border: 1px solid red;
+		}
+		li{
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>Item 8</li>
+		<li>Item 7</li>
+		<li>Item 6</li>
+		<li>Item 5</li>
+		<li>Item 4</li>
+		<li>Item 3</li>
+		<li>Item 2</li>
+		<li>Item 1</li>
+	</ul>
+	<div class="output"></div>
+
+
+	<script>
+		// When clicked on li => write in output the li.innerText
+		function liClickedHandler() {
+			console.dir(this.innerText);
+		}
+
+		// DOM Cache:
+		let listItems = document.querySelectorAll('li');
+		console.dir(listItems);
+
+		for(let i = 0; i<listItems.length; i++){
+			listItems[i].addEventListener('click', liClickedHandler );
+		}
+
+		// TODO: make it more efficient with attaching only 1 event listener
+	</script>
+</body>
+</html>
