@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>eventObjecttargetDemo </title>
+	<style>
+		ul{
+			border: 1px solid red;
+		}
+		li{
+			cursor: pointer;
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<ul class="test">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+	<div class="output"></div>
+
+	<script>
+		// DOM cache:
+		let ul=document.querySelector('.test');
+		let output = document.querySelector('.output');
+
+		// atach click event
+		ul.addEventListener('click', function(e) {
+			// console.dir( e.target.innerHTML );
+			// console.dir( e.currentTarget );
+
+			output.innerHTML = e.target.innerHTML;
+
+		})
+	</script>
+</body>
+</html>

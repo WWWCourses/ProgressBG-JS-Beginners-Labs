@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>changeCSSprops </title>
+	<style>
+		h1{
+			color: #F00;
+		}
+		.box{
+			width: 300px;
+			height: 100px;
+		}
+		.test{
+			background-color: red;
+			color: white;
+			font-size: 50px;
+		}
+		.changed{
+			background-color: blue;
+			font-size: 20px;
+		}
+
+	</style>
+
+<body>
+	<p class="box test" >Paragraph1</p>
+	<button>change P styling</button>
+
+	<script>
+		const test = document.querySelector('.test');
+		const btn = document.querySelector('button');
+
+		btn.addEventListener('click', function (event) {
+			// test.style.backgroundColor = "blue";
+			// test.style.fontSize = "20px";
+
+			console.dir(test.className);
+			console.dir(test.classList);
+
+			// test.className = "changed";
+			// test.classList.add("changed");
+			test.classList.toggle("changed");
+		})
+
+	</script>
+</body>
+</html>

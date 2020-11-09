@@ -8,12 +8,16 @@
 	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-	<h1>Test</h1>
-	<script type="text/babel">
+	<h1>A simple Babel Demo</h1>
+	<p>This is not recommended for production. Check <a href="https://babeljs.io/setup">babeljs.io/setup</a> or <a href="https://www.robinwieruch.de/minimal-node-js-babel-setup#nodejs-with-babel">The minimal Node.js with Babel Setup</a> for more information.</p>
+
+	<script type="telxt/babe">
 		class Student{
+			// private fields
 			#id = 1;
 
 			constructor(name){
+				// public field:
 				this.name = name;
 				this.#id += 1;
 			}
@@ -21,10 +25,12 @@
 				console.log(`I'm ${this.name}, id: ${this.#id}`);
 			}
 		}
+
 		console.log('tests');
 
 		let pesho = new Student('Pesho');
 		let maria = new Student('Maria');
+
 		// console.log( pesho.#id);
 		maria.greet();
 	</script>

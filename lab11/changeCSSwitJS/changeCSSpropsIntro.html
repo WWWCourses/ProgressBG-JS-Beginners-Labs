@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>changeCSSprops </title>
+	<style>
+		h1{
+			color: #F00;
+		}
+		p{
+			font-size: 50px;
+		}
+	</style>
+
+<body>
+	<p class="test" style="background-color: red; color: white;">Paragraph1</p>
+	<button>change P styling</button>
+
+	<script>
+		const test = document.querySelector('.test');
+		const btn = document.querySelector('button');
+
+		btn.addEventListener('click', function (event) {
+			test.style.backgroundColor = "blue";
+			test.style.fontSize = "20px";
+		})
+
+	</script>
+</body>
+</html>

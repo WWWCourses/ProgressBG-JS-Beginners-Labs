@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>setTimeoutDemo </title>
+</head>
+<body>
+	<div class="box">Test</div>
+	<button class="changeColor">Change Box Color</button>
+	<button class="stopChange">stop change</button>
+	<script>
+		let box = document.querySelector('.box');
+		let btnChangeColor = document.querySelector('.changeColor');
+		let btnStopChange = document.querySelector('.stopChange');
+		let changeColorID
+
+		function changeBGcolor(element, color) {
+			console.log(`color: ${color}`);
+			element.style.backgroundColor = color;
+		}
+
+		btnChangeColor.addEventListener('click', function (event) {
+			// changeBGcolor(box, "red"); after 1 ses
+
+			// setTimeout(function () {
+			// 	changeBGcolor(box, "red");
+			// })
+
+			changeColorID = setTimeout( changeBGcolor, 3000, box, "red");
+			console.log(changeColorID);
+
+		} );
+
+		btnStopChange.addEventListener('click', function (event) {
+			console.log(changeColorID);
+			clearInterval(changeColorID);
+		})
+	</script>
+</body>
+</html>

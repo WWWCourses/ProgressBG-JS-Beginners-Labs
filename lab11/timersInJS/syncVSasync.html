@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>syncVSasync </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+</head>
+<body>
+	<script>
+		// synchronous execution
+		alert(`1`);
+		console.log(`1`);
+
+		// asynchronous execution
+		setTimeout(function () {
+			console.log(`Hello`);
+		}, 1000);
+		console.log(`2`);
+
+		// 1
+		// 2
+		// Hello
+
+	</script>
+</body>
+</html>

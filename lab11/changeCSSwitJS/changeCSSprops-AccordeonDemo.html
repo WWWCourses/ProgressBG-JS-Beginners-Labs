@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>changeCSSprops </title>
+	<style>
+		article{
+			font-size: 20px;
+			cursor: pointer;
+			border: 1px solid #000;
+			background-color: #CCC;
+		}
+		article>h1{
+			border: 1px solid #F00;
+		}
+		article>p{
+			display: none;
+		}
+		.shown{
+			display: block;
+		}
+	</style>
+<body>
+	<div class="articleWrapper">
+		<article>
+			<h1>Chapter1</h1>
+			<p>Paragraph1</p>
+		</article>
+		<article>
+			<h1>Chapter2</h1>
+			<p>Paragraph2</p>
+		</article>
+	</div>
+
+	<script>
+		let articleWrapper = document.querySelector('.articleWrapper');
+
+		articleWrapper.addEventListener('click', function (event) {
+			// get the article object clicked on:
+			let p;
+
+			// get the P node:
+			if(event.target.nodeName === "ARTICLE"){
+				p = event.target.children[1];
+				// p = event.target.querySelector('p');
+			}else if( event.target.nodeName === "H1"){
+				p = event.target.nextElementSibling;
+			}
+
+			console.dir(p.innerHTML);
+
+			// show P inrespective article:
+			// p.style.display = "block";
+			// p.className = "shown";
+			p.classList.toggle("shown");
+
+		})
+
+	</script>
+</body>
+</html>
